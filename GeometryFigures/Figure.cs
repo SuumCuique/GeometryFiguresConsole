@@ -1,24 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
+﻿using System.Xml.Serialization;
 
-namespace GeometryFigures
-{
+namespace GeometryFigures {
     /// <summary>
     /// Abstract class for all figures
     /// </summary>
     [XmlInclude(typeof(Circle))]
     [XmlInclude(typeof(Triangle))]
     [XmlInclude(typeof(Rectangle))]
-    public abstract class Figure
-    {
-        protected abstract double Area { get; set; }
+    public abstract class Figure {
+        /// <summary>
+        /// Area of figure
+        /// </summary>
+        public abstract double Area { get; set; }
+        /// <summary>
+        /// Calculate area of figure
+        /// </summary>
         public abstract void CalculateArea();
-        public double ReturnArea()
-        {
+        /// <summary>
+        /// return calculated area of figure
+        /// </summary>
+        /// <returns></returns>
+        public double ReturnArea() {
             CalculateArea();
             return Area;
         }
